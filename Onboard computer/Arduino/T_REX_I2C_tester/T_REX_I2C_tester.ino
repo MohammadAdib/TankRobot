@@ -3,7 +3,7 @@
 #define startbyte 0x0F
 #define I2Caddress 0x07
 
-int sv[6]={1500,1500,1500,1500,0,0};                 // servo positions: 0 = Not Used
+int sv[6]={0,0,0,0,0,0};                 // servo positions: 0 = Not Used
 int sd[6]={5,10,-5,-15,20,-20};                      // servo sweep speed/direction
 int lmspeed,rmspeed;                                 // left and right motor speed from -255 to +255 (negative value = reverse)
 int ldir=5;                                          // how much to change left  motor speed each loop (use for motor testing)
@@ -13,7 +13,7 @@ byte devibrate=50;                                   // time delay after impact 
 int sensitivity=50;                                  // threshold of acceleration / deceleration required to register as an impact
 int lowbat=550;                                      // adjust to suit your battery: 550 = 5.50V
 byte i2caddr=7;                                      // default I2C address of T'REX is 7. If this is changed, the T'REX will automatically store new address in EEPROM
-byte i2cfreq=0;                                      // I2C clock frequency. Default is 0=100kHz. Set to 1 for 400kHz
+byte i2cfreq=1;                                      // I2C clock frequency. Default is 0=100kHz. Set to 1 for 400kHz
 
 void setup()
 {
